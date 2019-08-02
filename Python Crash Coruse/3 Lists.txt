@@ -1,0 +1,109 @@
+#A list is a collection of items in an order order by [] with items sepeareted by
+#If you ask python to print this it will print he brackets as well
+Dicks = ["extra small", "Small", "Medium", "Large", "Extra Large"]
+print(Dicks)
+print("\n")
+
+#You can acess specifc items from the list, starting from index 0 to n-1, in this case n-1 = 4 since
+#the number of iteams is 5
+print(Dicks[0] +"\n" + Dicks[1] +"\n" + Dicks[2] +"\n" + Dicks[3] +"\n" + Dicks[4] +"\n")
+print("\n")
+
+#While inside the list you can still use functions associated with that data type
+print(Dicks[0].title())
+print("\n")
+
+#If you enter index -1 it will give you the last item in the list 
+print(Dicks[-1])
+print("\n")
+
+#You can use items form list and put them to use in other variables 
+message = "I don't like " + Dicks[0] + " Ice Cream"
+print(message)
+print("\n")
+
+#You can modify an element of the list by saying that it equals it over writing the old stroed value
+Dicks[0] = "Tiny"
+print(Dicks)
+print("\n")
+
+#You can also add elements to the list you can instert an new elemnt at the end of the list by using .append(Data)
+Dicks.append("Booty")
+print(Dicks)
+print("\n")
+
+#You can even make an empty list and add stuff to it cancel_dump_traceback_late
+Butts = []
+print(Butts)
+Butts.append("Small")
+Butts.append("Medium")
+Butts.append("Large")
+print(Butts)
+print("\n")
+
+#You can also instert itmes at any point you want usingthe insert(idnex,item), so for instace you place it 
+#at positon 1 it will shift all the other items one to thright and insert the new item
+Butts.insert(1,"Brunch")
+print(Butts)
+print("\n")
+
+#You can also remove specif item at known index using Del
+del Butts[3]
+print(Butts)
+print("\n")
+
+#however if you just wanna remove the last item form the lsit you may use pop() however you can also store the 
+#poped item in variable if  you wish so 
+Butt = Butts.pop()
+print(Butts)
+print("A "+Butt +" butt is fine")
+print("\n")
+
+#You can pop specific items from specific positions 
+Dick = Dicks.pop(1)
+print(Dick)
+print(Dicks)
+print("\n")
+
+#To Determine if you want to use del or pop think about if you want to use the item you are 
+#delete or do you just want to get rid of it 
+
+#You can also remove a specific items with the use of remvoe, it will onlt remove one item and the first item it finds
+#You can ever set up a variable that can be serched for and removed 
+Knees = ["Big" , "Big", 'big', "rRig", "small", "rRig"]
+Knee = "small"
+print(Knees)
+Knees.remove("rRig")
+print(Knees)
+Knees.remove(Knee)
+print(Knees)
+print("\n")
+
+#Lists have a sort function which will orginaze the elemnts 
+alphabet = ["a","f","r","w","y","h","s","y","a","h","a","j","y","u","r","a","d"]
+print(alphabet)
+alphabet.sort()
+print(alphabet)
+#You can sort in reverse as well, you can't use the reverse while priting it has to be 2 steps 
+alphabet.sort(reverse=True)
+print(alphabet)
+print("\n")
+
+#You can print out the list sorted while not affecting the actuly order of the list by using sorted ()
+Alphabet = ["a","f","r","w","y","h","s","y","a","h","a","j","y","u","r","a","d"]
+print(Alphabet)
+print(sorted(Alphabet))
+print(Alphabet)
+print("\n")
+
+#You can print the reverse order of the list, meang last element is first and so on. 
+print(Knees)
+Knees.reverse()
+print(Knees)
+print("\n")
+
+#You can find the lenght or number of elements in the list by using len
+print(Alphabet)
+Lenght = len(Alphabet)
+print("There's " + str(Lenght) + " numbers in the Alphabet list")
+print("\n")

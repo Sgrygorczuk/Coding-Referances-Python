@@ -1,0 +1,75 @@
+#You can acess txt files. First you create an object which will break down to a function 
+#You make a vairable that will store all the strings inside the file using read() funcioon
+#Doing this will only open files with that name if they are in the same folder 
+#If the file exists somewhere else it wont find it 
+with open('10.11 Pie.txt') as FileObject:
+    Contents = FileObject.read()
+    print(Contents)
+    print("\n")
+    #Since Contnets is a string type you can still use all string fucntions on it 
+    print(Contents.strip())
+print("\n")
+
+#You dont need to create a seprate varibale to read the contnets 
+with open('10.11 Pie.txt') as FileObject:
+    print(FileObject.read().strip())
+print("\n")
+
+#You can create a path to a soruce files and read it then
+FilePath = 'C:/Users/Me/Desktop/Code Refercance/Notes/Python/Python Crash Coruse/10.11 Pie.txt'
+with open(FilePath) as FileObject:
+    print("This is read from a path " +FileObject.read().lstrip())
+print("\n")
+
+#You can read each line in the program 
+counter = 0
+with open('10.11 Pie.txt') as FileObject:
+    for line in FileObject:
+        #These blank lines appear because an invisible newline character is
+        #at the end of each line in the text file.To get rid of them you need to rstrip or strip
+        print("Line #" + str(counter) + " " +  line.strip())
+        counter += 1
+print("\n")
+
+#With the readlines function you can create a list of strings from each line on the file
+with open(FilePath) as FileObject:
+    lines = FileObject.readlines()
+    
+#Here I use a loop to strip each line of anything at front and back of the string 
+counter = 0
+print(lines)
+for line in lines:
+    lines[counter] = line.strip()
+    counter += 1
+print(lines)
+print("\n")
+
+#Once you have the data from the file you can do anythign you wnat with it such as put it all in one long string
+Pi = ""
+for line in lines:
+    Pi += line
+print(Pi)
+
+#If the file has 1 million character it's fine python has no limit your memory it's your limit
+
+#You can even comapre the data from the file with any data you get
+birthday = input("What is your birthday ddmmyy")
+if birthday in Pi and birthday != "":
+    print("You are born of pie")
+else:
+    print("Pie did not choose you")
+    
+#You can write a file as well. To do that you use the 'w' to say that the file is in wirte mode, you can use 'r' for read mode
+#and 'a' for append mode. then you can use the function .write() to save a string in the txt file 
+FileName = "10.12 Progaming.txt"
+with open(FileName, 'w') as FileObject:
+    FileObject.write("I love to program ")
+    #You can write another line by just using the .write() agian, beacues I didn't use the \n in the furst one it will write 
+    #on the same line 
+    FileObject.write("I love creating new games.\n")
+
+#If you were to open the same file and use 'w' on it you would delte everything in it and start from scrach
+#So instead you can append if you want to add something to it
+
+with open(FileName,'a') as FileObject:
+    FileObject.write("I love to eat\nFood and stuff")

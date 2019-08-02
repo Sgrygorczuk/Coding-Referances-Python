@@ -1,0 +1,118 @@
+#Classes is a datastructure that stores information about a specific object
+class Dog():
+    #__intit is a special method that is used anytime an object 
+    #is created of the class Dog and sets up the arguments of the object 
+    def __init__ (self,name,age):
+        self.name = name
+        self.age = age
+    
+    def sit(self):
+        print(self.name.title() +" sat down")
+        
+    def roll(self):
+        print(self.name.title() +" rolled")
+        
+#Initating A object
+MyDog = Dog("Rupert",2)
+#To use an atribpute from it you use the dot operator 
+print("My dogs name is " + MyDog.name + " and he is " + str(MyDog.age))
+print('\n')
+
+#Ypu can call functions from the dog class
+MyDog.roll()
+MyDog.sit()
+print('\n')
+
+#You can create as many objects as you want 
+JessiesDog = Dog("Kitty",0)
+print("Jessies dog's name is " + JessiesDog.name + " and he is " + str(JessiesDog.age))
+print('\n')
+
+class Car():
+    def __init__(self,make,modle,year):
+        self.make = make
+        self.modle = modle
+        self.year = year
+        #You can have variables which are not affected by user at creation 
+        self.odometer = 0
+        
+    def Descriptiive(self):
+        print("This car is a " +self.modle + " " + self.make + " made in " + str(self.year))
+        
+    def UpdateOdometer(self, mileage):
+        if mileage >= self.odometer:
+            self.odometer = mileage
+        else:
+            print("You can't roll back an odometer!")
+        
+    def IncremetOdometer(self, milaaage):
+        self.odometer += milaaage
+        
+    def FillCar(self):
+        print("The car is filled")
+    
+    def ReadOdometer(self):
+        print("This car has " + str(self.odometer) + " miles")
+        
+MyCar = Car("Audi", 'a4', 2016)
+MyCar.Descriptiive()
+MyCar.ReadOdometer()
+print('\n')
+
+#You can change values of defult varibales such as odometere
+MyCar.odometer = 39
+MyCar.ReadOdometer()
+print('\n')
+
+#You can create a method to do that too
+MyCar.UpdateOdometer(23)
+MyCar.ReadOdometer()
+print('\n')
+
+#You can use a method to update the value without replacing it
+MyCar.IncremetOdometer(213)
+MyCar.ReadOdometer()
+print('\n')
+
+#Here we create a child class which inhereate many of it's functions form the parent
+class ElectricCar(Car):
+    def __init__(self,make,modle,year):
+        #super(). will copy the consturctuor and make this classes contruct act the same way
+        super().__init__(make, modle, year)
+        #You can add stuff into the constructor that only belogns to the child 
+        self.battery = 80
+            
+        #You can also add function that's exclusive to the child 
+        
+    def DescribeBatter(self):
+        print("This car has " + str(self.battery) + "KW")
+        
+    #You can overwrite functions form the parent, modifying the parent function as much as you want
+    def FillCar(self):
+        print("This car has no fule dumb dumb")
+            
+MyElectricCar = ElectricCar('tesla', 'model s', 2016)
+#We can use parent functions as they are inheritied
+MyElectricCar.Descriptiive()
+MyElectricCar.DescribeBatter()
+MyElectricCar.FillCar()
+print('\n')
+
+#Sometims your classes are getting to big and it would be better to make seperate ones     
+class Battery():
+    #Sets a defult function for the battery
+    def __init__(self, BatterySize = 80):
+        self.BatterySize = BatterySize
+        
+    def DescribeBattery(self):
+        print("This battery has " + str(self.BatterySize) + "KW")
+        
+class DumbElectricCar(Car):
+    def __init__(self,make,modle,year):
+        #This creates battery object in the Dumbelecticar class
+        self.battery = Battery()
+        
+MyNewElectricCar = DumbElectricCar('edison', 'model s1', 0000)    
+#You have to access the battery object using . then you acess the descibebattery function using the .
+MyNewElectricCar.battery.DescribeBattery()
+print('\n')

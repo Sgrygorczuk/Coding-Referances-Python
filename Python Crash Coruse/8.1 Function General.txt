@@ -1,0 +1,176 @@
+#You can create functons which you can call to be used repatabdly
+# you do it by saying def NAME(input):
+#the function is not run till called by later in the code 
+
+def greet ():
+    print("Hello Dicksheads")
+greet()
+print("\n")
+    
+
+def Greet (username):
+    print("Hello Dicksheads " + username)
+Greet('Kate')
+print("\n")
+    
+#You can pass multiple variables into a function 
+#You can call the same function as many times as you want
+def animals(Pet, PetName, Age):
+    print("I have a " + Pet)
+    print("It's name is " + PetName)
+    print("It's: " + str(Age) + " old")
+animals("Dog", "Franky", 21)
+animals("Cat", "Maxy", 0.1)
+print("\n")
+
+#Key Argument pari can be done so you can put items into a function in any order and still be read the way you wanna
+animals(Pet = "Horse", PetName = "Jenaa", Age = 2)
+print("\n")
+
+#You can define default values to functions 
+def Animals(Pet = "Dogo", PetName = "Pupper", Age = 1):
+    print("I have a " + Pet)
+    print("It's name is " + PetName)
+    print("It's: " + str(Age) + " old")
+Animals(Pet = "Krock")
+print("\n")
+Animals(PetName = "Krock")
+print("\n")
+Animals(Age = 23)
+print("\n")
+
+#Equivelent Functions, these three are the same 
+animals(Pet = "Horse", PetName = "Jenaa", Age = 2)
+animals(PetName = "Jenaa", Pet = "Horse", Age = 2)
+print("\n")
+
+#You can have a return value from a function
+def NameMaker(FirstName, LastName):
+    FullName = FirstName + " " +LastName
+    return FullName.title()
+name = NameMaker("sebastian", "gyrogcsja")
+print(name)
+print("\n")
+
+#Optional Argument ypu can just say = "" and it wont show, a defult argument has to be the last one in the function
+def NameMaker2(FirstName, LastName, MiddleName = ""):
+    FullName = FirstName + " " + MiddleName + " " + LastName
+    return FullName.title()
+name = NameMaker2("gebastian", "gyrogcsja")
+print(name)
+name = NameMaker2("sebastian", "gyrogcsja", "freeeeee")
+print(name)
+print("\n")
+
+#You can even return a dictornary 
+def BuildPerson (FirstName, LastName):
+    person = {"First"  : FirstName, "Last": LastName}
+    return person
+Irina = BuildPerson("Irina", "Arias")
+print(Irina)
+
+#You can run a function through a while loop as many times as you want 
+def NameFormating(FirstName, LastName):
+    FullName = FirstName + " " +LastName
+    return FullName.title()
+while True:
+    print("Enter q to quit at any time ")
+    FirstName = input("Enter the first name ")
+    if(FirstName == 'q'):
+        break
+    LastName = input("Enter last name ")
+    if(LastName == 'q'):
+        break
+    FullName = NameFormating(FirstName, LastName)
+    print("Hello " + FullName)
+print('\n')
+
+#You can pass a list into a function 
+def PassUsers(Names):
+    for name in Names:
+        print("Hello " + name.title() + "!")
+        
+Names = ["Bob","Rob","Dob"]
+PassUsers(Names)
+print('\n')
+
+#When you pass a list to a function the function can make chages to the list that are permenemt 
+
+UnPrinted = ["Buttocks", "Boobies", "DingDongs"]
+Complete = []
+
+print("UnPrinted: " + str(UnPrinted))
+print("Complete: " + str(Complete))
+
+def PrintModels(UnPrintedDesing, CompleteModle):
+    while UnPrintedDesing:
+        CurrentDesing = UnPrintedDesing.pop()
+        print("Printing Model: " + CurrentDesing)
+        CompleteModle.append(CurrentDesing)
+        
+PrintModels(UnPrinted, Complete)
+print("UnPrinted: " + str(UnPrinted))
+print("Complete: " + str(Complete))
+print('\n')
+
+UnPrinted = ["Buttocks", "Boobies", "DingDongs"]
+Complete = []
+
+#Sometime you dont want the function tochange the list so you can say function_name(list_name[:]) and that will stop if from
+#making perman,kent changes to the fucntions, when using the functuon now when defining it
+print("UnPrinted: " + str(UnPrinted))
+print("Complete: " + str(Complete))
+
+def PrintModels2(UnPrintedDesing, CompleteModle):
+    while UnPrintedDesing:
+        CurrentDesing = UnPrintedDesing.pop()
+        print("Printing Model: " + CurrentDesing)
+        CompleteModle.append(CurrentDesing)
+        
+PrintModels2(UnPrinted[:], Complete)
+print("UnPrinted: " + str(UnPrinted))
+print("Complete: " + str(Complete))
+print('\n')
+
+#Sometimes you wont know how many agruments a function needs to take you can circrument that by assinging an
+#arbitnary number of arugments to a function 
+
+def MakePizza(*PizzaParts):
+    print(PizzaParts)
+
+MakePizza("Butts")
+MakePizza("Nuts","Bats","cats","Strats")
+print('\n')
+
+#You can have deifned argumetns as well as arbintary arugments, however the arbianry argumetns have to be at the end
+def MakingDaPizza(size, *Parts):
+    print("We making a Pizza that's " + str(size) +'" with these toppings:')
+    for part in Parts:
+        print(part)
+MakingDaPizza(16,"Nuts","Bats","cats","Strats") 
+print('\n')
+
+#Has to have non degult argument even in this set up adter non defult 
+def TestingLimits(Bitt, Jam = "Berry",*Bits):
+    print("We have a " + Jam + " with a primary: " + Bitt + ". In addion to secondary bits:")
+    for Bit in Bits:
+        print(Bit)
+TestingLimits("Kuki", "Crumbs", "Lemon","Tracks")
+print('\n')
+
+#Sometimes you will want to put in a aribrtiay number of items which may have diffrent data types you can
+#make a dicornary to store InvalidTheme, **allows you to pass two arguments
+#.items() retruns a list of items 
+def Dic(First = "", Last = "", **UserInfo):
+    Info = {}
+    Info['First Name'] = First
+    Info['Last Name'] = Last
+    for key, value in UserInfo.items():
+        Info[key] = value
+    return Info
+InfoCollector = Dic('Carly', 'Stewart', 
+                    Age = 21, 
+                    BirthPlace = 'London', 
+                    Sex = 'Female')
+print(InfoCollector)
+print('\n')

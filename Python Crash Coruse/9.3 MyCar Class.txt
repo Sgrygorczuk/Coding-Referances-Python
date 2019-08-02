@@ -1,0 +1,31 @@
+#this is the main class where everything will be imported to
+
+
+#To import a specific class form a modula you can say this
+from b import Car
+
+MyCar = Car("Audi", 'a4', 2016)
+MyCar.Descriptiive()
+MyCar.ReadOdometer()
+
+#You can import multiple classes from a Module
+from b import Car,Dog
+
+MyDog = Dog("Barry",10)
+MyDog.roll()
+
+#You can import the entire modula if you wish so, when you do that you have to specift which class you are using from .
+#which modula 
+import c 
+MyElectricCar = c.ElectricCar("Butt","Model T", 213)
+
+
+#When you have a inherited class you dont need ot import the parent you can just import the child class
+from c import ElectricCar
+MyElectricCar2 = ElectricCar("A","B",213)
+MyElectricCar2.ReadOdometer()
+MyElectricCar2.Descriptiive() 
+
+#Will import all of the classes and functions from the module, useful cuz you dont need to use the . to use functions from
+#the modula
+from c import *

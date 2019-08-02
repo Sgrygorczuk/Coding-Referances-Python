@@ -1,0 +1,14 @@
+#There is a lot of modulas that you can import from the standard liabry
+#For example ordered dictornary, this will keep your dicotnary ordered by first input first output 
+
+from collections import OrderedDict
+
+#We create a variable which is an ordered
+FavoriteLanguage = OrderedDict()
+FavoriteLanguage["Jane"] = "C"
+FavoriteLanguage["Dick"] = "Python"
+FavoriteLanguage["Fred"] = "SQL"
+
+for name,langune in FavoriteLanguage.items():
+    print(name + " just loves " + langune)
+    

@@ -1,0 +1,24 @@
+#You can have functions in a seprate block of code or you can even have them in a seperate file
+#You can then import them form the other file when need to use them not having to plop the 
+#giant chunk of code in each progmar
+
+#You use the import function to bring in the modula and then the modulaName followed by period to 
+#call a specific funtion from that file
+import b
+b.make_pizza(16,"bacon","takon")
+
+#You can also import a specific function from a modula not having to constatly use  the . operatior
+from b import Pizza
+Pizza(12, "Chops","Cyclops","Flops")
+
+#You can import a function and give it an alias in this case we renamed Pizza to Pi
+from b import Pizza as Pi
+Pi(1, "Nothing it's too small you dumb dumb")
+
+#You can do the same with the whole mould as well 
+import b as c
+c.Pizza(666, "End of the World")
+
+#Finally you can import all functions with the use of *
+from b import *
+make_pizza(3.14, "Pie haha")

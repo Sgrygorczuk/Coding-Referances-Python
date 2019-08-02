@@ -1,0 +1,23 @@
+def FormatName(First,Last,Middle=""):
+    if Middle:
+        Full = First + " " + Middle + " " + Last
+    else:
+        Full = First + " " + Last
+    return Full.title()
+
+class AnoumnySurvay():
+    
+    def __init__(self,question):
+        self.question = question
+        self.responses = []
+    
+    def ShowQuestion(self):
+        print(self.question)
+    
+    def StoreResponse(self,newResonse):
+        self.responses.append(newResonse)
+        
+    def ShowResults(self):
+        for response in self.responses:
+            print(response)
+            

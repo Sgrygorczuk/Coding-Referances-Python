@@ -1,0 +1,29 @@
+import sys 
+import pygame
+
+
+def runGame():
+    #Turns on background setting that Pygame needs to work
+    pygame.init()
+    
+    #Creates a window with specifc size of the screen, or as python calls it surface 
+    screen = pygame.display.set_mode((1200,800))
+    pygame.display.set_caption("Aliean Invasion")
+    
+    #sets a variable that stores a color 
+    bg_color = (230,230,230)
+    
+    
+    while True:
+        #an event is an action take by the user which the program lisens for 
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                sys.exit()
+    
+        #Fils the top layer of the screen with that color 
+        screen.fill(bg_color)
+        
+        #Redraws the screen to the most currnet version
+        pygame.display.flip()
+    
+runGame()

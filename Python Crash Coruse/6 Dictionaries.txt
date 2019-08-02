@@ -1,0 +1,158 @@
+#a dicotranty is an info bank of pair of name and accosated value 
+#in this case the Duck has many keyvalues, BeakSize, Color Health ect and each of them have a value assiged to them
+Duck = {'BeakSize' : 'Large', 'Flight':'High', 'Color' : 'Green', 'Health' : 100}
+print(Duck['BeakSize'])
+print(Duck['Flight'])
+print(Duck)
+print("\n")
+
+#You can add keyvalues by adding a new name and value to the dictionary
+Duck['Waffels'] = 3
+print(Duck)
+print("\n")
+
+#You can start with an empty dictionary and fill it in
+Dog = {}
+Dog['Fur'] = 'Brown'
+Dog['Bark'] = 'Bork'
+print(Dog)
+print("\n")
+
+
+#You can modify any value by refering to it's key
+print(Dog['Fur'])
+Dog['Fur'] = 'Black'
+print(Dog['Fur'])
+print("\n")
+
+
+#Lets do a better example, here the XPostion will change depening on the speed atribut of the Pirate
+XIncriment = 0;
+Pirate = {'XPoistion' : 0, 'YPostion' : 0, 'Speed' : 'Medium'}
+print(Pirate)
+if Pirate['Speed'] == 'Slow':
+    XIncriment = 1
+elif Pirate['Speed'] == 'Medium':
+    XIncriment = 2
+else:
+    XIncriment = 3
+Pirate['XPoistion'] = Pirate['XPoistion'] + XIncriment
+print("The Pirate is movign at " + Pirate['Speed'].lower() + " speed and has moved " + str(XIncriment) + " units")
+print(Pirate)
+print("\n")
+
+#You can prementlt remvoe key and value from a dictornary by using del
+print(Duck)
+del Duck['Waffels']
+print(Duck)
+print("\n")
+
+#You can break down a dictonary to be sevarl lines 
+Online = {
+    'Username' : 'HotDog221',
+    'FirstName' :'Jake',
+    'LastName' : 'Dick',
+    'Age' : 'Dick'
+    }
+
+#You can loop through the indivual key and values usign a for loop, and you can use muliple variables inside a for loop
+#you can do that using the items list which gives you two listsm one of keys and the other of values 
+for Key, Value in Online.items():
+    print("Key: " + Key + " Value: " + Value)
+print("\n")
+#You can create just a list of Key or Values respecivily 
+for Key in Online.keys():
+    print("Key: " + Key)
+print("\n")
+for Value in Online.values():
+    print("Value: " + Value)
+print("\n")
+#Simially for keys youy can just loop through the dictonary as it goes to it 
+for Key in Online:
+    print("Key: " + Key)
+print("\n")
+
+#You can sort the keys and values before pritning them 
+for Key, Value in sorted(Online.items()):
+    print("Key: " + Key + " Value: " + Value)
+print("\n")
+
+#The set function can look through a list and delete any repates 
+print("Set Not Used")
+for Value in Online.values():
+    print("Value: " + Value)
+print("Set Used")
+for Value in set(Online.values()):
+    print("Value: " + Value)
+print("\n")
+
+#Sometimes you wanna store a list insde a dictonary or a diconaries inside a list this is called nesting 
+#He is a basic way of doing it, you make each diconary maunally, it's feasable for a small number but after a while you will
+#want to auntimate this 
+Cat1 = {'Fur' : 'Red', 'Age' : 1}
+Cat2 = {'Fur' : 'Brown', 'Age' : 12}
+Cat3 = {'Fur' : 'Tabby', 'Age' : 3}
+Cats = [Cat1, Cat2,Cat2]
+print(Cats)
+print("\n")
+
+#Here is an example of making many cats 
+Pussy = []
+for Cat in range(30):
+    Cat1 = {'Fur' : 'Red', 'Age' : 1}
+    Pussy.append(Cat1)
+#Prints out first 5 cats 
+for Cat in Pussy[:5]:
+    print(Cat)
+print("Ther are "  + str(len(Pussy)) + " Cats in the Pussy List\n")
+
+#You can loop through a list and change the infivilde items in a slikce, you cant copy one dictonary to be another 
+#cat = {BLAH} cat2 = {BLEH} cat = cat2 doesnt make cat = {BLEH} it stays {BLAH}
+for Cat in Pussy[:3]:
+    Cat['Fur'] = 'Brown'
+    Cat['Age'] = 12 
+for Cat in Pussy[:5]:
+    print(Cat)
+print("\n")
+
+#You can put a list inside a dictonary, and you can acess the spcific list to interact with it
+Pizza = {
+    'Crust' : 'Thick',
+    'Toppings' : ['Nob','Bob','Rob','Cob','Mob']    
+    }
+print("You ordered a " + Pizza['Crust'] + "-crust pizza " + "with the following toppings:")
+#You saying Pizza['Key-List'] to access the values of that key list 
+for topping in Pizza['Toppings']:
+    print("\t" + topping)
+    
+#You can have muliple lists inside, so in this case we use one for loop to enter a dictonry and go through each item
+#with one variable that scans the keys and the other becomes a list
+#We use a second for loop to go through the list of each 
+FavoriteButts = { 
+    'Henry' : ['Small', 'Big'],
+    'Susy' : ['BIG BOOTY'],
+    'Norman' : ['Big', 'BIG BOOTY'],
+    'Frank' : ['Small', 'Falt', 'BIG BOOTY']
+    }
+for Name,Butts in FavoriteButts.items():
+    print(Name + " lieks:")
+    for Butt in Butts:
+            print("\t" + Butt.title())
+    print("Booties")
+print("\n")
+
+#You can even nest dictonaries inside diconatnes this is a way to access them
+Users = {
+    'Harry' : {
+        'Magic' : 'Medium',
+        'Hair' : 'Brown'
+        },
+    'Mary' : {
+        'Bloody' : True,
+        'Spooy' : 'Kind Of'
+        }
+    }
+for Name, Dicks in Users.items():
+    print (Name + ":")
+    for DickName, Cat in Dicks.items():
+        print ("Key - " + DickName + " Value: " + str(Cat))

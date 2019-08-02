@@ -1,0 +1,103 @@
+#The input fuction stops the program and wait for the user to write something 
+#Once the user has input it it's stored in the message as a string and you can use it however you want it 
+message = input("Say Something you Dick\n")
+print(message)
+
+message = input("How old are you: " )
+print("You are " + message + " old, you a old person man")
+
+#You can store your question in a strign and then run that through the input funcation
+promt = "Do you like to be a dick?"
+promt += "\nSure seems like it " 
+anwser = input(promt)
+print("Anweser: " + anwser)
+
+#If you want to take in an intger input you have to use the int() function on the output 
+if((int(anwser) < 18)):
+    print("Below 18 get out")
+elif(int(anwser) > 18):
+    print("Welocme to the club")
+
+#The modulo operator is a good way to get the left overs of divison When you divide 3/2 you have 1 full int and 1 left over 
+#The modulo %, will tell you how many left overs you have in divison 
+
+modulo = (int(anwser))
+modulo %= 2
+print("This many left over: " + str(modulo))
+
+
+#The while loop will occure as long as the statement is untrue here it will run as along as modulo is less than 5
+#and we increment modulo by 1 so that it doesnt get stuck infetienly 
+modulo = 0
+while modulo < 5:
+    print(modulo)
+    modulo += 1
+    
+#You can even let your user choose to quit by give a specifci input 
+message = ""
+while message != "quit":
+    message = input("What ya wanna say ")
+
+#You can have a bunch of flags that turn your while loop flase or true ending the sequncing
+#Flags would be a bunch of options tht can do that 
+flag = True
+while flag:
+    anwser = input("Gimme some words bro: (quit - quit) : (nah - quit) \n")
+    if anwser == "quit":
+        flag = False
+    if anwser == "nah":
+        flag = False
+            
+#Break will stop the loop where it occurs not going through the rest of the loop, if the break didn't occur it'd be infintate
+flag = True
+while flag:
+    anwser = input("Gimme some words bro: (quit - quit) \n")
+    if anwser == "quit":
+        break
+    if(anwser == "quit"):
+        flag = True
+
+#Unlike break you can use contiouse to go back to the start of the loop if a statment is sadifsied so in this case anythime 
+#you have an even number it skips the print out 
+modulo = 0
+while modulo < 15:
+    modulo += 1
+    if (modulo % 2) == 0:
+        continue
+    print(modulo)
+    
+#You can use a while loop and go through a list and move it to another list, for example here you have
+#ywo list on will be emptied while the other one will be filled
+UnknowUser = ['dick', 'jane', 'butty']
+Knowusers = []
+
+print("UnKnown: " + str(UnknowUser))
+print("Known: " + str(Knowusers))
+#Loops while there are entries inside of UnknowUser
+while UnknowUser:
+    user = UnknowUser.pop()
+    print("Unknow User: " + user)
+    Knowusers.append(user)
+print("UnKnown: " + str(UnknowUser))
+print("Known: " + str(sorted(Knowusers)))
+
+#You can also use the while loop to look for a reption of a string and remove all isntace of that string 
+animals = ['cat', 'dog', 'bird','cat','donkey','cat', 'dog','dog','CAT']
+print(animals)
+while 'cat' in animals:
+    animals.remove('cat')
+print(animals)
+
+#You can do the same similar in dictonaires here is an eaxaample of you filling it in
+responses = {}
+flag = True
+while flag:
+    name = input("Enter a name: ")
+    response = input("What do they like to do?")
+    responses[name] = response
+    
+    no = input("Do you want to repeate yes/no?")
+    
+    if(no == 'no'):
+        flag = False
+print(responses)

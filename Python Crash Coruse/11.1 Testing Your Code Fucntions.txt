@@ -1,0 +1,33 @@
+#Unit case and test cases, unit case is a test showing that one aspect of a function 
+#behaves correctly, test cases are a collection of unit cases that show all aspects 
+#of the fuction behave correctly 
+
+import unittest 
+from b import FormatName
+
+#We creat a class that will have a bunch of unit tests 
+class NameTester(unittest.TestCase):
+    #You want it to have test_ at the start so that anytime you run this modula it will be ran automatically
+    def test_FirstLastName(self):
+        formatedName = FormatName('ho','he')
+        #The assert is important as it tells you if  the two values are really the same 
+        self.assertEqual(formatedName, 'Ho He')
+    
+    def test_FirstMiddleLastName(self):
+        #You can add as many tests and you shoud we will make one for the middle name varrion now
+        formatedName = FormatName('leopard', 'yolk', 'frank')
+        self.assertEqual(formatedName, 'Leopard Frank Yolk')
+        
+unittest.main()
+
+#The ran this FormatName onky had 2 items you could put in it so ti ran fine, now that it needs three 
+#The program will tell you that you need one more field filled in and tells you which fiedl it should be 
+#NExt you have to take approatate action in this case make the middle name optional by chaning the FormatedName inputs
+
+#There is a lot of asser methods you can use 
+#assertEqual(a, b) Verify that a == b
+#assertNotEqual(a, b) Verify that a != b
+#assertTrue(x) Verify that x is True
+#assertFalse(x) Verify that x is False
+#assertIn(item, list) Verify that item is in list
+#assertNotIn(item, list) Verify that item is not in list

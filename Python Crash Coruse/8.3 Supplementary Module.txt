@@ -1,0 +1,10 @@
+#This is a function that will be imported to a diffrent file 
+def make_pizza(size, *toppings):
+    print("\nMaking a " + str(size) + "-inch pizza with the following toppings:")
+    for topping in toppings:
+        print("- " + topping)
+        
+def Pizza(size, *toppings):
+    print("\nMaking a " + str(size) + "-inch pizza with the following toppings:")
+    for topping in toppings:
+        print("- " + topping)

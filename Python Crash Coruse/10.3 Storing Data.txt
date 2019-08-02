@@ -1,0 +1,88 @@
+#You will want to store and load data that a user creates to do this you can use 
+#json (JavaScript Object Notation)
+
+import json
+
+numbers = [1,2,3,4,5,6]
+fileName = '10.3.1 JSON.json'
+with open(fileName, 'w') as FileObject:
+    #dump takes two arguments 1 what you want to store and 2 where you stroing it
+    json.dump(numbers,FileObject)
+    
+with open(fileName,'r') as FileObject:
+    #You can use load to read the info from json file
+    readNumber = json.load(FileObject)
+print(readNumber)
+
+#Here is an example of a progarm that stores your info 
+name = input('What is your name?')
+file = '10.3.2 Gretting.json'
+with open(file,'w') as FileObject:
+    json.dump(name,FileObject)
+
+with open(file) as FileObject:
+    readname = json.load(FileObject)
+print('Hello ' + readname)
+
+#A good way to use the excpetion in combiantion with raeding files is if someone wants to read a file and it dosen't exits
+file = '10.3.3 Json and Exception.json'
+try:
+    with open(file) as FileObject:
+        readname = json.load(FileObject)
+except FileNotFoundError:
+    anwser = input("There is no such file would you like to create a new one? (Y/N)")
+    if anwser == 'Y':
+        name = input('What is your name?')
+        with open(file,'w') as FileObject:
+            json.dump(name,FileObject)
+
+with open(file) as FileObject:
+    readname = json.load(FileObject)
+print('Hello ' + readname)
+
+#Refactoring is looking at your code and seeing how parts of it could be broken down into simple task which a function should do
+#lets do that with the pervious example '
+
+def LoadInfo(file):
+    try:
+        with open(file) as FileObject:
+            readname = json.load(FileObject)
+    except FileNotFoundError:
+        anwser = input("There is no such file would you like to create a new one? (Y/N)")
+        if anwser == 'Y':
+            name = input('What is your name?')
+            with open(file,'w') as FileObject:
+                json.dump(name,FileObject)
+    else:
+        print("Hello " + readname)
+        
+LoadInfo('10.3.3 Json and Exception.json')
+
+#That is good but you can break it down even more
+#This function take the reading name part 
+def GetUserName(file):
+    try:
+        with open(file) as FileObject:
+            readname = json.load(FileObject)
+    except FileNotFoundError:
+        return None
+    else: 
+        return readname 
+    
+#This function will create a new file if the user wants to do it
+def CreateFile(file):
+    anwser = input("There is no such file would you like to create a new one? (Y/N)")
+    if anwser == 'Y':
+        name = input('What is your name?')
+        with open(file,'w') as FileObject:
+            json.dump(name,FileObject)
+
+#Collection of the previous funcion that will either print out the name or create a new file 
+def LoadInfo2(file):
+    name = GetUserName(file)
+    if name:
+        print("Hello " + name)
+    else:
+        CreateFile(file)
+
+LoadInfo2('10.3.3 Json and Exception.json')

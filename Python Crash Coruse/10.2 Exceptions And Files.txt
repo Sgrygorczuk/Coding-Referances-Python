@@ -1,0 +1,68 @@
+#When python runs into a problem it creates a exception object, if you  create 
+#an exception for it telling it how to react to this error it you'll be able to ctorl it
+
+#For example you can't do this so we can sat, you have to use the name of the error in this case ZeroDivisionError
+#you say try over an arae of the code and then if it find the error in it, it will take aprotamte action
+try:
+    print(5/0)
+except ZeroDivisionError:
+    print("Cant divide by 0")
+
+#So here we have a choice in what the output is gonna be and if the input dosen't crash the program 
+#Then you will output the correct anwser 
+while True:
+    in1 = input("Enter First Number ")
+    if in1 == 'q':
+        break
+    in2 = input("Enter Second Number ")
+    if in2 == 'q':
+        break
+    try:
+        in3 = int(in1)/int(in2)
+    except ZeroDivisionError:
+        print("Cant divide by 0 ")
+    else:
+        print(str(in3))
+        
+#You can use exceptions for many issues for example not fidning a file or path to that file
+filepath = '10.21 Excepetion Fail'
+try:
+    with open(filepath) as FileObjcet:
+        print(FileObjcet.read())
+except FileNotFoundError:
+    print("No Such file exists")
+
+filepath = '10.11 Pie.txt'
+try:
+    with open(filepath) as FileObjcet:
+        Contents = FileObjcet.read()
+except FileNotFoundError:
+    print("No Such file exists")
+else: 
+    #the split function breask a string into a list of words any time it dectect a whitespcae
+    words = Contents.split()
+    words = len(words)
+    print("The " + filepath + " file has " + str(words) + " words")
+    
+#You could do this for many files by creating a function that intakes a name of the file and checks it 
+def BookWordCount(FileName):
+    
+    try:
+        with open(FileName) as FileObjcet:
+            Contents = FileObjcet.read()
+    except FileNotFoundError:
+        print("No Such file exists")    
+    else: 
+        #the split function breask a string into a list of words any time it dectect a whitespcae
+        words = Contents.split()
+        words = len(words)
+        print("The " + FileName + " file has " + str(words) + " words")
+
+BookWordCount('10.12 Progaming.txt')
+BookWordCount("boobies")
+
+#You don't always have to let the user know an eror occured and oyu just pas 
+try:
+    print(5/0)
+except ZeroDivisionError:
+    pass

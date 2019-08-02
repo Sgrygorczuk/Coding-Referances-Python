@@ -1,0 +1,33 @@
+#Pythons doesn't need to set up a main fuction to run you can 
+#print out the Hello World statemnt by just saying print("Hello World")
+print ("Hello World")
+
+#You can declare a variable by just making it equal to the string,
+#you dont even have to define the variable as a string Python does it for you
+VariableName = "Goodbye World"
+print (VariableName)
+
+#The strings variables also come with many funcations already imple,emted such as
+#title which capitlzes each first letter of a word in the stirng 
+#upper which capitlizes everything and lower which writes everything in lowercase
+name = "sebastian grygorczuk"
+print(name.title())
+print(name.upper())
+print(name.lower())
+
+#You can combine string variables and strings and print them out, you can apply
+#string functions to them in the meantime as well
+FirstName = "irina"
+LastName = "arias"
+FullName = FirstName + " " + LastName
+print("Hello " + FullName.title() + " nice to meet you!")
+
+#You can add special characters such as \t to add a tab or \n to go to the next line
+print("\t" + VariableName)
+print("These are your choices:\n-Die\n\t-Go To School\n\t\t-Have a Life")
+
+#You can remove white spaces in strigns with the functions rstrip(), lstrip() and strip()
+#l and r strip remove any extra speace on left or right repsecivivley while strip will remove both at once
+Spaces = " A I ASD A :S A "
+Spaces = Spaces.strip()
+print(Spaces)

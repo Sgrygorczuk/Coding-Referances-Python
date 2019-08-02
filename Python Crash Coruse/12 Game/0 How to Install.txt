@@ -1,0 +1,18 @@
+#Use the following command to run get-pip.py:
+#$ python get-pip.py
+#If you use a different command to run Python in a terminal, make sure
+#you use that command to run get-pip.py. For example, your command might
+#be python3 get-pip.py or C:\Python35\python get-pip.py.
+#After the program runs, run the command python -m pip --version to
+#make sure pip was installed successfully.
+
+#The Pygame project is hosted on a code-sharing site called Bitbucket. To
+#install Pygame on your version of Windows, find a Windows installer at
+#https://bitbucket.org/pygame/pygame/downloads/ that matches the version of
+#Python you’re running. If you don’t see an appropriate installer listed at
+#Bitbucket, check http://www.lfd.uci.edu/~gohlke/pythonlibs/#pygame.
+#After you’ve downloaded the appropriate file, run the installer if it’s a .exe file.
+#If you have a file ending in .whl, copy the file to your project directory.
+#Open a command window, navigate to the folder that you copied the
+#installer to, and use pip to run the installer:
+#> python -m pip install --user pygame-1.9.2a0-cp35-none-win32.whl

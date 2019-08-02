@@ -1,0 +1,37 @@
+class Car():
+    def __init__(self,make,modle,year):
+        self.make = make
+        self.modle = modle
+        self.year = year
+        #You can have variables which are not affected by user at creation 
+        self.odometer = 0
+        
+    def Descriptiive(self):
+        print("This car is a " +self.modle + " " + self.make + " made in " + str(self.year))
+        
+    def UpdateOdometer(self, mileage):
+        if mileage >= self.odometer:
+            self.odometer = mileage
+        else:
+            print("You can't roll back an odometer!")
+        
+    def IncremetOdometer(self, milaaage):
+        self.odometer += milaaage
+        
+    def FillCar(self):
+        print("The car is filled")
+    
+    def ReadOdometer(self):
+        print("This car has " + str(self.odometer) + " miles")
+
+#You can store multiple classes in a modula
+class Dog():
+    def __init__ (self,name,age):
+        self.name = name
+        self.age = age
+    
+    def sit(self):
+        print(self.name.title() +" sat down")
+        
+    def roll(self):
+        print(self.name.title() +" rolled")

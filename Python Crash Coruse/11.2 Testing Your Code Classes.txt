@@ -1,0 +1,46 @@
+import unittest
+
+#Just as you might want to test a function you can test a class
+
+from b import AnoumnySurvay
+
+class TestAnoumnySurvay(unittest.TestCase):
+    
+    #Writing all the stuff in each test is a lot of work
+    #IT'd be better if you coudl just store them all in one function and then recall them from there
+    #That's what the setUp method is for  
+    
+    def setUp(self):
+        question = "What langunage you speak?"
+        self.survey = AnoumnySurvay(question)
+        self.responses = ["English","Polish","Latin"]
+        
+    ##def test_StoreSingleResponse(self):
+    ##  question = "What langunage you speak?"
+    ##    survey = AnoumnySurvay(question)
+    ##     survey.StoreResponse("English")
+    ##    #Verifys that the response was saved correctly 
+    ##   self.assertIn("English",survey.responses) 
+    
+    def test_StoreSingleResponse2(self):
+        self.survey.StoreResponse(self.responses[0])
+        #Verifys that the response was saved correctly 
+        self.assertIn(self.responses[0],self.survey.responses) 
+    
+
+    ## def test_StoreThreeResponses(self):
+    ##     question = "What langunage you speak?"
+    ##     survey = AnoumnySurvay(question)
+    ##    responses = ["English","Polish","Latin"]
+    ##    for response in responses:
+    ##         survey.StoreResponse(response)
+    ##     for response in responses:
+    ##         self.assertIn(response, survey.responses)    
+    
+    def test_StoreThreeResponses(self):
+        for response in self.responses:
+            self.survey.StoreResponse(response)
+        for response in self.responses:
+            self.assertIn(response, self.survey.responses)
+            
+unittest.main()

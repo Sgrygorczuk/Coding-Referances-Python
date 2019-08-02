@@ -1,0 +1,88 @@
+#If statment is a decion between two or more choices, here we go through the whole 
+#list of booze and if you choose sake it will praise you 
+Booze = ["Beer", "Wine", "Sake", "sake", "Champage"]
+for Bottle in Booze:
+        if Bottle == "Sake":
+            print("Ah you Japan Man")
+        else:
+            print("Poor taste san")
+#One thing to be noted is that if statements are capital sensative so Sake and sake are not the same string
+print("\n")
+
+#you can use the != not equal to check if they are unequal 
+Butt = "Buttocks"
+if Butt != "left Butt":
+    print("FULL BUTT")
+print("\n")
+
+#you can check if multiple condions are true, and all statemnts must be ture, uwith or at least one statment has to be true
+Mouse = "Small"
+Cat = "Big"
+if Mouse == "Small" and Cat == "Big":
+    print("World is normal")
+if Mouse == "Big" or Cat == "Big":
+    print("World is wonky")
+if Mouse == "Big" or Cat == "Small":
+    print("What the hell?!")
+else:
+    print("All good")
+print("\n")
+
+#If you want want to look for a specif thing in a list, if it exists you may want to add it to the list if not, say it's already there
+#in addtion you dont have to use an else statment, when you dont include it it's as if you inclided and empty one 
+Glass = "Ketchup"
+if Glass not in Booze:
+    Booze.append(Glass)
+print(Booze)
+print("\n")
+
+#Boolen expression is something that's true or false, 
+GlassFull = False
+print(Glass)
+if Glass == "Ketchup":
+    GlassFull = True;
+print(GlassFull)
+print("\n")
+
+#you can have multiple if statments in a chain using the elif, however the first one that is true will be used everything else 
+#is gonna be ignorede, if you want to test the condion sevea; times you can use several ifstatments in a row
+if 20 == 3:
+    print("BUTTS")
+elif Glass == "Ketchup":
+    print("NOT BUTTS")
+print("\n")
+
+
+#You can put if statments into for loops 
+for Bottle in Booze:
+    if Bottle == "Sake":
+        print("We no has Sake Suck OFF")
+    else:
+        print("Adding " + Bottle + " to drink")
+print("Thabks for being a drunk")
+print("\n")
+
+#checking if a list is empty, here before we go throug the list it checks if it's empty, if it is it will return false going to
+#the else statment 
+Empty = []
+if Empty: 
+    print(Empty)
+else:
+    print("Empty")
+#This time it will print out the Empty list beacues it ahs a value inside it 
+Empty = [1]
+if Empty: 
+    print(Empty)
+else:
+    print(Empty)
+print("\n")
+
+#We can compate two lists using an if statment, basically you get a vairable to go through one list 
+#and then compare that variable through the second list 
+NumbersILike = [1,2,3,4,5,6]
+NumbersIHave = [3,7,2]
+for Number in NumbersIHave:
+    if Number in NumbersILike:
+        print(Number)
+    else:
+        print("Sorry no " + str(Number))

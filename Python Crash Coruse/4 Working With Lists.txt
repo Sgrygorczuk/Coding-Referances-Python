@@ -1,0 +1,100 @@
+print("\n")#Here we can loop through the entire list assinging the current element to the variable nob
+#these nobs then can be used in any way, for insarnce print 
+#indenation is important as it shows that it's an element of the for loop
+Artists = ["Irina", "Max", "Nelson"]
+for nob in Artists:
+    print(nob)
+print("\n")
+
+#In this case each nob has been added to the Blank string and then it can be printed as one string 
+#if somethoing is outside such as print(Blank) it's no longer considered part of the loop
+Blank = ""
+for nob in Artists:
+    Blank = Blank + " " + nob;
+print(Blank)
+print("\n")
+
+#This assinges values starting from 1 upto 5, not inclucign 5 and prints it out
+for Value in range(1,5):
+    print(Value)
+#the variable Value keeps the last number from the range 
+print(Value)
+print("\n")
+
+#Creat and empty list and append Values from the range of 0-9
+Numbers = []
+for Value in range(0,10):
+    Numbers.append(Value)
+print(Numbers)
+print("\n")
+
+#You can create a list instantly by just using the list() function with combiantion of range function
+butts = list(range(1,6))
+print(butts)
+
+#This creares a list of numbers between 2-11 that are divisbale by 2
+EvenNumbers = list(range(2,11,2))
+print(EvenNumbers) 
+print("\n")
+
+#This creates a list of number between 3-28 that are divisable by 3
+ThreeNumbers = list(range(3,28,3))
+print(ThreeNumbers)
+print("\n")
+
+#There are few functions that work with number lists, such as sum which sums it up, min gives you the min and max gives you the max
+print(sum(ThreeNumbers))
+print(min(ThreeNumbers))
+print(max(ThreeNumbers))
+print("\n")
+
+#This is a lot of code to create list of squares, this can be simplifed by list comprheantion 
+Numbers = []
+for Value in range(0,10):
+    Value = Value**2
+    Numbers.append(Value)
+print(Numbers)
+#this is list comptheation, first you set up the list, then you creat the square prentheisis, the action of 
+#the variable then the variable being assinged to the range in the for loop 
+squares = [Value**2 for value in range(0,10)]
+print(Numbers)
+print("\n")
+
+#You can onyl look at a part of a list by somethign called a splice, you can look from the start to anywhere you want
+#by saying :N, so it will got from 0 to index N
+print(Numbers[:4])
+#You can choose a middle section when you say you go from index N through M without M by using N:M
+print(Numbers[4:7])
+#You can also go from middle of the list to the end by saying N: 
+print(Numbers[7:])
+print("\n")
+
+#You can loop through a slice, like here where we move 
+Junk = list(Numbers[:6])
+print(Junk)
+print("\n")
+
+#Copying a list requires you to use the splice to tell how much you wanna copy
+Junks = []
+Junks = Numbers[:]
+print(Junks)
+print(Numbers)
+print("\n")
+
+#Tuple is a list which elements you cannot chage you use partheitnes instead square brakcets to define a tuple 
+Boxes = (200,10)
+print(Boxes)
+print("\n")
+
+#You can uses for loops for tuples as well
+for Box in Boxes:
+    print(Box)
+print("\n")
+
+#You can't change a element of a tuple Boxes[0] = 2; you cant do that but you can overwrite the variable Boxes itself
+print(Boxes)
+Boxes = (5,2)
+print(Boxes)
+print("\n")
+
+    

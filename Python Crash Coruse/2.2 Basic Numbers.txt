@@ -1,0 +1,29 @@
+#You can print out the addion subtraction mulcipalce or even division of numbers
+#in this case we are dealing with integers which dont have decimal points 
+print(4+2)
+print(4-2)
+print(4*2)
+print(4/2)
+
+#To uses exponsnets you just use the ** 
+print(4**2)
+
+#It even has order of operations integrated 
+print(((4+2*3)**2)/4)
+
+#anything that has a decimal point is a float and you can use math rules on it same as an integer 
+print(0.4+0.2)
+print(0.4-0.2)
+print(0.4*0.2)
+print(0.4/0.2)
+
+#You can even make ints or floats into variables by assinging them name 
+number = 23;
+print(number)
+
+#however you cannot mix strings and int/floats when priting, they are two diffrent data types and 
+#you need to covernt one to the other using str() and placing the int/float variable into the function 
+print("Jason is " + str(number) + " years old\n")
+
+#This allows you to skim throug the idealoigly connected to pythobn 
+import this
