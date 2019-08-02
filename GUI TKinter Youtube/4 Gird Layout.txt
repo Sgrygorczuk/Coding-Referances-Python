@@ -1,0 +1,26 @@
+#Imports everything from tkinter class
+from tkinter import *
+
+root = Tk()
+
+label_one = Label(root, text = "Name")
+label_two = Label(root, text = "Password")
+#Entry is a blank filed where you want the user to type something 
+entry_one = Entry(root)
+entry_two = Entry(root)
+
+#Checkbox gives you the check button widget 
+checkbox = Checkbutton(root, text = "Keep Me Logged In")
+
+
+#You choose where the thing goes by saying where on the grid you want to place it 
+#When you want to palce a thing to a thing you say sticky= N,E,S,W North East Sout West 
+label_one.grid(row = 0, column = 0, sticky = W)
+entry_one.grid(row = 0, column = 1)
+label_two.grid(row = 1, column = 0)
+entry_two.grid(row = 1, column = 1)
+#Colmnspan will say you want to take up 2 coloumns 
+checkbox.grid(columnspan = 2)
+
+
+root.mainloop()

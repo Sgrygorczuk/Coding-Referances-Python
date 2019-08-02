@@ -1,0 +1,28 @@
+#Imports everything from tkinter class
+from tkinter import *
+
+root = Tk()
+#Creats a rectangle on the screen 
+top_frame = Frame(root)
+#puts the rectangle on the top, however becues it's first it's not necessary, can do TOP, BOTTOM, LEFT, RIGHT
+top_frame.pack(side=TOP)
+bottom_frame = Frame(root)
+bottom_frame.pack(side=BOTTOM)
+
+#Creates a button, set it where you want it, what it says on it and what color the text is 
+button_one = Button(top_frame,text = "Button 1", fg="red")
+button_two = Button(top_frame,text = "Button 2", fg="blue")
+button_three = Button(top_frame,text = "Button 3", fg="green")
+button_four = Button(bottom_frame,text = "Button 4", fg="yellow")
+
+#After creating the widegt you need to put the widget into the screen 
+#When you pack something you can tell it where you want to pack it 
+#When you say RIGHT LEFT it will take it as far LEFT or RIGHT as possible, so since Two is allready all the way to the right 
+#THree shows up after it since that's as far RIGHT it can go 
+button_one.pack(side=LEFT)
+button_two.pack(side=RIGHT)
+button_three.pack(side=RIGHT)
+button_four.pack()
+
+
+root.mainloop()

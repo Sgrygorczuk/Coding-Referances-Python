@@ -1,0 +1,24 @@
+
+#Imports everything from tkinter class
+from tkinter import *
+#message box is a subclass so you have to import it 
+import tkinter.messagebox
+
+def make_message_box(event):
+    #Will pop up the message box, when ever called 
+    tkinter.messagebox.showinfo("Widow Titile", "You are gonna die ")
+
+root = Tk()
+
+button = Button(root, text = "Will Pop Up a Message Box")
+button.bind("<Button-1>", make_message_box)
+button.pack()
+
+anwser = tkinter.messagebox.askquestion("Question 1", "Yes or No motherfucker?")
+
+if anwser == 'yes':
+    print("=)")
+else:
+    print("*.*")
+
+root.mainloop()

@@ -1,0 +1,24 @@
+#Imports everything from tkinter class
+from tkinter import *
+
+def printName():
+    print("Hello My Name is Sebastian")
+
+#here we are saying this is part of an event and when that event occurs this may be called 
+def left_click(event):
+    print("In the event of the button being clicked you got me")
+
+root = Tk()
+
+
+#the command will link the button to a specific function you want to preform, you dont put in () when you do this 
+button_one = Button(root, text="Print Hello",command=printName)
+button_two = Button(root, text="Event")
+#This tells you what is the event, the event in the case is button-1 which is left click of the mouse, and what
+#function you want it to recall when the event occurs 
+button_two.bind("<Button-1>", left_click)
+
+button_one.grid(column = 0)
+button_two.grid(column = 2)
+
+root.mainloop()

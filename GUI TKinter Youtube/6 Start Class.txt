@@ -1,0 +1,25 @@
+#Imports everything from tkinter class
+from tkinter import *
+
+
+class Buttons():
+    #Constructor, master means root or the main window 
+    def __init__(self,master):
+        #It;s not a self.frame beauces it;s a local variable to the __int__ function 
+        frame = Frame(master)
+        frame.pack() 
+        
+        #When you saying use this function you have to say self.function 
+        self.button_one = Button(frame, text = "Button 1 - Print", command= self.print_something)
+        self.button_one.pack(side = LEFT) 
+        
+        #There already exists a button that will turn the mainloop off, command = quit will turn program off
+        self.button_two = Button(frame, text = "Button 2 - Quit", command = quit)
+        self.button_two.pack(side = LEFT)
+    
+    def print_something(self):
+        print("Blash")
+
+root = Tk()
+buttons = Buttons(root)
+root.mainloop()

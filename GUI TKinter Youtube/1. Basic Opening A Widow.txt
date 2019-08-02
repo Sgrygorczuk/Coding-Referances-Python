@@ -1,0 +1,15 @@
+#Imports everything from tkinter class
+from tkinter import *
+
+
+#How to open a widow, we do so by creating a object of the tkinter class which creates a blank window 
+root = Tk()
+#Crates a label in the window root with text saysing "Too Easy"  
+label_object = Label (root,text = "Too Easy")
+#Throws the lables anywhere it can 
+label_object.pack()
+#Puts the window in an infinate loop so it dosent just open and close 
+root.mainloop()
+
+
+

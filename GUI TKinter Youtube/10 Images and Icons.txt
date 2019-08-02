@@ -1,0 +1,13 @@
+#Imports everything from tkinter class
+from tkinter import *
+
+root = Tk()
+
+#You can use photo to import a imaage itno a window 
+photo = PhotoImage(file = "man-long-eyelashes.png")
+#to Place the object you have to put it in a label 
+label = Label(root, image = photo)
+label.pack()
+
+
+root.mainloop()

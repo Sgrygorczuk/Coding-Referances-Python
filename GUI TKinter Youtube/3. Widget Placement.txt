@@ -1,0 +1,21 @@
+#Imports everything from tkinter class
+from tkinter import 
+
+root = Tk()
+
+#bg stands for background, fg means foregorund 
+label_one = Label(root, text = One, bg = red, fg = green)
+label_two = Label(root, text = Two, bg = black, fg = yellow)
+label_three = Label(root, text = Three, bg = white, fg = black)
+label_four = Label(root, text = ALL, bg = green, fg = black)
+
+
+label_one.pack(side = LEFT)
+#Fill will take up as much space as the screen does unless something else it taking that spot. fill = BOTH or expand = True will make it 
+#fill in both x and y. Nope Exapand keeps it in the center, expand = True + fill = BOTH will fill all of it 
+label_three.pack(side = RIGHT, fill = Y)
+label_two.pack(fill = X)
+label_four.pack(expand = True, fill = BOTH)
+
+
+root.mainloop()

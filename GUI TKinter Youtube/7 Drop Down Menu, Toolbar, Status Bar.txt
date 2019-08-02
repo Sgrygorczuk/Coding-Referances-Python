@@ -1,0 +1,54 @@
+#Imports everything from tkinter class
+from tkinter import *
+from _operator import sub
+from nt import stat
+
+def Print():
+    print("LalaLa")
+
+root = Tk()
+
+#Menu will creates the menu bar on top of the screen 
+menu = Menu(root)
+#Make's sure menu is a menu 
+root.config(menu = menu)
+
+
+sub_menu = Menu(menu)
+#Now this actully adds a button that will drop 
+menu.add_cascade(label="File", menu = sub_menu)
+#This adds a command to the menu 
+sub_menu.add_command(label = "Print", command = Print)
+#Adds a seperator between buttons to make it easier for user to see it 
+sub_menu.add_separator()
+sub_menu.add_command(label = "Print Too", command = Print)
+
+
+sub_sub_menu = Menu(sub_menu)
+sub_menu.add_cascade(label = "More", menu = sub_sub_menu)
+
+#creates a second menu drop down on the mneu bar 
+sub_menu_two = Menu(menu)
+menu.add_cascade(label = "Second One!", menu = sub_menu_two)
+sub_menu_two.add_command(label = "Third Strike", command = Print)
+
+#Tool Bar is just a frame with buttons on top 
+toolbar = Frame(root, bg= "blue")
+insert_button = Button(toolbar, text = "Insert", command = Print)
+#Padding just gives you space on the sides of the buttons 
+insert_button.pack(side = LEFT, padx = 20,pady = 1)
+print_button = Button(toolbar, text = "Print", command = Print)
+print_button.pack(side = LEFT, padx = 2,pady = 2)
+
+toolbar.pack(side = TOP, fill = X)
+
+#Status Bar 
+#bd stands for boarder, relief is how the bareder will appear , anchor will tell you where the text will be placed 
+status = Label(root, text = "Do Nothing", bd = 1, relief = SUNKEN, anchor = W)
+
+
+status.pack(side = BOTTOM, fill = X)
+
+
+
+root.mainloop()

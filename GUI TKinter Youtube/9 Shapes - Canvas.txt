@@ -1,0 +1,24 @@
+#Imports everything from tkinter class
+from tkinter import *
+
+root = Tk()
+
+
+
+#To Draws something you need a canvas 
+canvas = Canvas(root, width = 200 ,height  = 100)
+canvas.pack()
+
+#To create line you specif start x and y, Top Left is 0,0 and then the end x y
+black_line = canvas.create_line(0,0,200,50)
+#You use fill to color the line 
+red_line = canvas.create_line(100,0,200,50, fill = 'red')
+
+#First stuff you give it is the top left of the rectangle then give it width and height 
+grey_box = canvas.create_rectangle(50,50, 100, 100 ,fill = 'gray')
+
+#will delete everything on canvas 
+canvas.delete(ALL)
+
+root.mainloop()
+
